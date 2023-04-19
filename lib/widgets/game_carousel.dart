@@ -12,10 +12,12 @@ class GameCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
+
     return CarouselSlider(
       options: CarouselOptions(
         // height: 200,
-        aspectRatio: 19 / 11,
+        aspectRatio: media.height < 1000 ? 16 / 9 : 12 / 5,
         viewportFraction: 0.8,
         initialPage: 0,
         enableInfiniteScroll: true,
@@ -42,23 +44,23 @@ class GameCarousel extends StatelessWidget {
                         fit: BoxFit.cover),
                   ),
                 ),
-                Positioned(
-                  right: 10,
-                  top: 5,
-                  child: Chip(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    side: BorderSide.none,
-                    label: Text(
-                      "Popular",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(color: Theme.of(context).primaryColor),
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   right: 10,
+                //   top: 5,
+                //   child: Chip(
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(20),
+                //     ),
+                //     side: BorderSide.none,
+                //     label: Text(
+                //       "Popular",
+                //       style: Theme.of(context)
+                //           .textTheme
+                //           .bodySmall!
+                //           .copyWith(color: Theme.of(context).primaryColor),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           )

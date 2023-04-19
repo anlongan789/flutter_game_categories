@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_games_categories/models/game_model.dart';
 
@@ -8,6 +10,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
@@ -19,7 +22,9 @@ class HomeScreen extends StatelessWidget {
               child: CircleAvatar(
                 backgroundColor: Theme.of(context).primaryColor,
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      log("${media.width} x ${media.height}");
+                    },
                     icon: const Icon(Icons.dashboard_outlined)),
               ),
             ),
