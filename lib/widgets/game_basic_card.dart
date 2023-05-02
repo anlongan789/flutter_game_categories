@@ -37,11 +37,11 @@ class GameBasicInfoCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                Icons.download_for_offline_outlined,
+                Icons.access_time_rounded,
                 color: theme.primaryColor,
               ),
               const SizedBox(height: 5),
-              Text("4M+"),
+              Text("72H"),
             ],
           ),
 

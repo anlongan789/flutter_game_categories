@@ -23,7 +23,8 @@ class GameCard extends StatelessWidget {
         // String location =
         //     context.namedLocation("details", params: {"game": game.toString()});
         // log(location);
-        context.goNamed("details", extra: game, params: {"gameId": game.id});
+        context
+            .goNamed("details", extra: game, params: {"gameId": "${game.id}"});
       },
       child: Container(
         height: 230,
@@ -41,7 +42,7 @@ class GameCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(game.backgroundImage),
+                  image: NetworkImage(game.backgroundImage!),
                 ),
               ),
             ),
@@ -50,19 +51,19 @@ class GameCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.black,
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                            "https://wallpaperaccess.com/full/2455735.jpg"),
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   height: 50,
+                  //   width: 50,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(10),
+                  //     color: Colors.black,
+                  //     image: DecorationImage(
+                  //       fit: BoxFit.cover,
+                  //       image: NetworkImage(
+                  //           "https://wallpaperaccess.com/full/2455735.jpg"),
+                  //     ),
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Column(
@@ -70,7 +71,7 @@ class GameCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          game.name,
+                          game.name!,
                           style: Theme.of(context).textTheme.titleMedium,
                         ),
                         Text("Action, Adventure"),
